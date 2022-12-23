@@ -1,16 +1,31 @@
+ /* input section styling */
+.input-container {
+  display: flex;
+  justify-content: center;
+}
+input {
+  margin: 0.5rem;
+}
+
+/* shape section styling */
 /* changes the div into a rectangle */
 .rectangle {
-    height: 50px;
-    width: 100px;
-    background-color: #555;
-    display: block;
-    margin: 2rem;
-  }
-
+  height: 50px;
+  width: 100px;
+  background-color: #555;
+  display: block;
+  margin: 2rem;
+}
 /* changes the div into a circle with radius of 50 px */
 .circle {
-    height: 50px;
-    width: 50px;
-    background-color: #555;
-    border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: #555;
+  border-radius: 50%;
 }
+/* .drawing-area {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -10;
+} */
