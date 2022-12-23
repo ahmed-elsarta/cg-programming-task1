@@ -9,21 +9,27 @@
 </head>
 <body>
     <div class="input-container">
+        <p>choose action</p> <br>
+        <select name="action" id="action-menu" >
+            <option value="translate">translate</option>
+            <option value="rotate">rotate</option>
+            <option value="scale">scale</option>
+        </select>
         <p>Insert translation values here</p>
         <input type="number" name="tranX" id="X-value" placeholder="enter X value">
         <input type="number" name="tranY" id="Y-value" placeholder="enter Y value">
-        <button id="action-btn">translate</button>
+        <button id="action-btn">Apply</button>
     </div>
 
     <div class="drawing-area">
         <!-- insert your shape inside this div -->
-        <div class="container">
+        <div class="container" id="shape">
             <div class="duck-body"></div>
             <div class="feather"></div>
             <div class="eye"></div>
             <div class="beak"></div>
             <div class="leg"></div>
-          </div>
+        </div>
     </div>
     <script src="../static/app.js"></script>
 </body>
