@@ -8,17 +8,21 @@
     <link rel="stylesheet" href="../static/index.css">
 </head>
 <body>
-<div class="input-container">
-    <p>Insert translation values here</p>
-    <input type="number" name="tranX" id="transX-value" placeholder="enter X trans (pixels)">
-    <input type="number" name="tranY" id="transY-value" placeholder="enter Y trans (pixels)">
-    <button id="translate-btn">translate</button>
-</div>
+    <div class="input-container">
+        <p>Insert translation values here</p>
+        <input type="number" name="tranX" id="X-value" placeholder="enter X value">
+        <input type="number" name="tranY" id="Y-value" placeholder="enter Y value">
+        <button id="action-btn">translate</button>
+    </div>
 
-<div id="shape">
-    <div class="rectangle"></div>
-    <div class="circle"></div>
-</div>
+    <div class="drawing-area">
+        <!-- insert your shape inside this div -->
+        <div id="shape" class="shape">
+            <div class="rectangle"></div> 
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>  
+    </div>
     <script src="../static/app.js"></script>
 </body>
 </html>
