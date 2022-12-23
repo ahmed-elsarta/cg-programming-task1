@@ -36,25 +36,36 @@ function action_method() {
             rotate_shape()
             break;
           default:
-            
         } 
+    render_shape()
 }
 
 function translate_shape() {
     Y_position += Number(Y_input.value)
     X_position += Number(X_input.value)
     console.log(Y_position)
-    shape.style.transform = "translate(" + (X_position) + "px," + (Y_position) + "px)";
+    // shape.style.transform = "translate(" + (X_position) + "px," + (Y_position) + "px)";
 }
 
 function scale_shape() {
     X_scale *= Number(X_input.value)
     Y_scale *= Number(Y_input.value)
-    shape.style.transform = "scale(" + (X_scale) + "," + (Y_scale) + ")";
+    // shape.style.transform = "scale(" + (X_scale) + "," + (Y_scale) + ")";
 
 }
 
 function rotate_shape() {
     angle += Number(X_input.value)
-    shape.style.transform = "rotate(" + (-angle) + "deg)";
+    // shape.style.transform = "rotate(" + (-angle) + "deg)";
+}
+
+function render_shape() {
+    /*
+    the equivalent of writing this css
+    transform: matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) rotate(-angle deg)
+    */
+    
+    shape.style.transform = `matrix(${X_scale}, 0, 0, ${Y_scale}, ${X_position}, ${Y_position}) 
+    rotate(${-angle}deg)`;
+    console.log(shape.style.transform)
 }
