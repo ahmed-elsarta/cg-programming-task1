@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cg programming task 1</title>
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+<body>
+    <canvas id="myCanvas" height="500" width="500"></canvas>
+</body>
+<script>
+    (() => {
+        
+        const canvas = document.querySelector("#myCanvas")
+        canvas.width = 500
+        canvas.height = 500
+        const ctx = canvas.getContext("2d")
+        ctx.fillStyle = "tomato"
+        ctx.fillRect(10, 20, 200, 300)
+        ctx.strokeStyle = "green"  
+        ctx.strokeRect(150, 100, 200, 100)
+        ctx.beginPath()
+        ctx.arc(300, 320, 75, 0, 2*Math.PI)
+        ctx.fillStyle = "Lavender"
+        ctx.fill()
+        ctx.beginPath();
+        // Point A
+        ctx.moveTo(350, 50);
+        // Point B
+        ctx.lineTo(400, 100);
+        ctx.strokeStyle = "DeepPink"
+        ctx.stroke();
+        ctx.beginPath();
+        // Point A
+        ctx.moveTo(250, 250);
+        // Point B
+        ctx.lineTo(500, 400);
+        // Point C
+        ctx.lineTo(100, 25);
+        // Join C & A
+        ctx.closePath()
+        ctx.strokeStyle = "Navy"
+        ctx.stroke();
+      })()
+      
+</script>
+</html>
