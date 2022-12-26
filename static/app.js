@@ -1,7 +1,9 @@
 let action_btn = document.getElementById("action-btn")
 let X_input = document.getElementById("X-value")
 let Y_input = document.getElementById("Y-value")
-let shape = document.getElementById("shape")
+
+let shape = document.getElementsByClassName("shape")
+console.log(shape)
 
 //translate section
 let X_position = 0
@@ -48,8 +50,11 @@ function translate_shape() {
 }
 
 function scale_shape() {
-    X_scale *= Number(X_input.value)
-    Y_scale *= Number(Y_input.value)
+    if(Number(X_input.value)!= 0 && Number(Y_input.value)!= 0){
+        X_scale = Number(X_input.value)
+        Y_scale = Number(Y_input.value)
+    }
+    
     // shape.style.transform = "scale(" + (X_scale) + "," + (Y_scale) + ")";
 
 }
@@ -64,8 +69,9 @@ function render_shape() {
     the equivalent of writing this css
     transform: matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) rotate(-angle deg)
     */
-    
-    shape.style.transform = `matrix(${X_scale}, 0, 0, ${Y_scale}, ${X_position}, ${Y_position}) 
-    rotate(${-angle}deg)`;
-    console.log(shape.style.transform)
+    for (var i = 0; i < shape.length; i++) {
+        shape[i].style.transform = `matrix(${X_scale}, 0, 0, ${Y_scale}, ${X_position}, ${Y_position}) 
+        rotate(${-angle}deg)`;
+        console.log(shape[i])
+    }
 }
