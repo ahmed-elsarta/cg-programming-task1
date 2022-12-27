@@ -3,6 +3,7 @@ let X_input = document.getElementById("X-value")
 let Y_input = document.getElementById("Y-value")
 
 let shape = document.getElementsByClassName("shape")
+// let contain= divElement.getBoundingClientRect()
 console.log(shape)
 
 //translate section
@@ -10,6 +11,9 @@ let X_position = 0
 let Y_position = 0 
 let action_list = document.getElementById("action-menu")
 
+//shape centre
+let x_center = 0
+let y_center = 0
 
 // scale section 
 let X_scale = 1
@@ -57,6 +61,19 @@ function scale_shape() {
     
     // shape.style.transform = "scale(" + (X_scale) + "," + (Y_scale) + ")";
 
+}
+
+function getCenter() {
+              
+    divElement = document.querySelector(".container");
+
+    elemRect = divElement.getBoundingClientRect();
+
+    elemHeight = elemRect.height;
+    elemWidth = elemRect.width;
+    x_center= X_position +elemWidth/2;
+    y_center= Y_position +elemHeight/2;
+    
 }
 
 function rotate_shape() {
